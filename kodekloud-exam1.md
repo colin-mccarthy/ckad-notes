@@ -1,5 +1,8 @@
 # ckad-notes
 
+
+```
+
 kubectl run nginx-448839 --image nginx:alpine
 
 kubectl create ns apx-z993845
@@ -43,6 +46,9 @@ kubectl describe svc messaging-service
 kubectl get pods
 
 kubectl get pod webapp-color -o yaml > pod.yaml
+
+
+```
 
 
 
