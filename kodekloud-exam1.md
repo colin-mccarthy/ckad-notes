@@ -9,6 +9,8 @@ kubectl create ns apx-z993845
 
 
 
+
+
 kubectl create deployment httpd-frontend --image httpd:2.4-alpine
 
 kubectl scale deployment  --replicas 3 httpd-frontend
@@ -47,9 +49,7 @@ kubectl get pods
 
 kubectl get pod webapp-color -o yaml > pod.yaml
 
-```
 
-```
 spec:
   containers:
   - name: envar-demo-container
@@ -59,6 +59,87 @@ spec:
       value: "Hello from the environment"
     - name: DEMO_FAREWELL
       value: "Such a sweet sorrow"
+      
+      
+      
+      
+      
+kubectl create cm cm-3392845 --from-literal=DB_NAME=SQL3322 etc..
+
+
+
+
+
+kubectl create secret db-secret-xxdf --from-literal=DB_NAME=SQL3322 etc..
+
+
+kubectl describe secrets db-secret-xxdf
+
+kubectl get secret -o yaml 
+
+
+
+
+
+root user, security context
+
+
+
+
+
+kubectl -n e-commerce logs e-com-1123 > /opt/outputs/e-com-1123.logs
+
+
+
+
+
+vi pv.yaml
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: foo-pv
+spec:
+  storageClassName: ""
+  claimRef:
+    name: foo-pvc
+    namespace: foo
+    
+    
+  kubectl get pv
+  
+  
+  
+  
+kubectl create deployment redis --image=redis:alpine
+
+kubectl label deployments.apps redis app=redis
+
+kubectl get deployments.apps --show-labels
+
+kubectl expose deployment redis --target-port 6379 --port 6379
+
+23:41 --> video
+
+kubectl describe netpol redis-access
+
+
+
+
+
+kubectl run sega --image=busybox --command sleep 3600 --dry-run=client -o yaml > sega.yaml
+
+29:15 --> video
+
+
+ 
+ 
+ 
+ 
+ 
+
+
 
 ```
 
