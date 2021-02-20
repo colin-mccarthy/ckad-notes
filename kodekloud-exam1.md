@@ -2,20 +2,22 @@
 
 
 ```
-
 kubectl run nginx-448839 --image nginx:alpine
 
 kubectl create ns apx-z993845
+```
 
 
 
 
-
+```
 kubectl create deployment httpd-frontend --image httpd:2.4-alpine
 
 kubectl scale deployment  --replicas 3 httpd-frontend
+```
 
 
+```
 kubectl run --image redis:alpine -l tier=msg
 
 
@@ -32,9 +34,9 @@ kubectl get po | grep rs-d33393
 delete pods one at a time
 
 kubectly get po | grep rs-d33393
+```
 
-
-
+```
 kubectl -n marketing expose deployment redis --name messaging-service --port 6379 --target-port 6379 --dry-run=client -o yaml > svc.yaml
 
 vi svc.yaml ----> add the namespace field namespace: marketing
