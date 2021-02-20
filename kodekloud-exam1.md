@@ -49,16 +49,8 @@ kubectl get pods
 
 kubectl get pod webapp-color -o yaml > pod.yaml
 
+k delete po webapp-color --grace-period=0 --force
 
-spec:
-  containers:
-  - name: envar-demo-container
-    image: gcr.io/google-samples/node-hello:1.0
-    env:
-    - name: DEMO_GREETING
-      value: "Hello from the environment"
-    - name: DEMO_FAREWELL
-      value: "Such a sweet sorrow"
       
       
       
@@ -70,7 +62,7 @@ kubectl create cm cm-3392845 --from-literal=DB_NAME=SQL3322 etc..
 
 
 
-kubectl create secret db-secret-xxdf --from-literal=DB_NAME=SQL3322 etc..
+kubectl create secret generic db-secret-xxdf --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
 
 
 kubectl describe secrets db-secret-xxdf
