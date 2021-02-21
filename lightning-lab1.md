@@ -100,7 +100,7 @@ spec:
 
 ## configMap
 
-``
+```
 k create ns dvl1987
 
 k -n dvl1987 create cm time-config --from-literal=TIME_FREQ=10
