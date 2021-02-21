@@ -1,3 +1,5 @@
+## Volumes
+
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -47,3 +49,80 @@ spec:
         claimName: log-claim
 ```
  
+ 
+ ## Network Policy 
+ 
+ 
+ 
+ ```
+ k exec -it web-color -- sh
+ 
+ nc -z -v secure-service 80
+ 
+ cntr z
+ 
+ k get netpol
+ 
+ k describe netpol default-deny 
+ 
+ k get netpol default-deny -o yaml > netpol.yaml
+ 
+ k get po --show-labels
+ ```
+ 
+ ```
+ apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-color
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: secure-pod
+  policyTypes:
+  - Ingress
+    - from:
+      - podSelector:
+          matchLabels:
+            name: webapp-color
+      ports:
+      - protocol: TCP
+        port: 80
+```
+```
+ k exec -it web-color -- sh
+ 
+ nc -z -v secure-service 80
+ 
+ cntr z
+``` 
+
+## configMap
+
+``
+k create ns dvl1987
+
+k -n dvl1987 create cm time-config --from-literal=TIME_FREQ=10
+
+k run time-check --image busybox -o yaml > time-check.yaml 
+```
+
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello
+spec:
+  template:
+    # This is the pod template
+    spec:
+      containers:
+      - name: hello
+        image: busybox
+        command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+      restartPolicy: OnFailure
+```
+
+
+
