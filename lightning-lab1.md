@@ -109,20 +109,20 @@ k run time-check --image busybox -o yaml > time-check.yaml
 ```
 
 ```
-apiVersion: batch/v1
+apiVersion: v1
 kind: Job
 metadata:
-  name: hello
+  name: time-check
 spec:
   template:
-    # This is the pod template
     spec:
       containers:
-      - name: hello
+      - name: time-check
         image: busybox
         command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
       restartPolicy: OnFailure
 ```
 
+15:10 ---> start here when completing these notes
 
 
