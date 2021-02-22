@@ -1,13 +1,16 @@
 ## Sample configMap question
 
-Create a configMap from a file with these two env variables in it.
+1. Create a configMap from a file with these two env variables in it.
 
 ```
 COLOR=green
 NUMBER="2"
 ```
 
-Create a pod that uses this config map to get these env vars.
+2. Create a pod that uses this config map to get these env vars.
+
+
+3. Terminal into the pod and verify the env vars are there.
 
 
 
