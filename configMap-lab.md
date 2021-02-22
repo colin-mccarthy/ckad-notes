@@ -1,4 +1,4 @@
-## configMap
+## Sample configMap question
 
 Create a configMap from a file with these two env variables in it.
 
