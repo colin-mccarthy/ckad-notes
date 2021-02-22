@@ -17,15 +17,18 @@ k exec podname -it -- env
 ```
 
 ```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pineapple
 spec:
   containers:
-    - name: demo
-      image: alpine
-      command: ["sleep", "3600"]
-      env:
-          valueFrom:
-            configMapKeyRef:
-              name: game-demo 
+    - name: pineapple
+      image: pihole/pihole
+      envFrom:
+      - configMapRef:
+          name: my-config
+  restartPolicy: Never
 ```
               
 
