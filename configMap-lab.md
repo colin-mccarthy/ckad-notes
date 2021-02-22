@@ -1,3 +1,19 @@
+## configMap
+
+Create a configMap from a file with these two env variables in it.
+
+```
+COLOR=green
+NUMBER="2"
+```
+
+Create a pod that uses this config map to get these env vars.
+
+
+
+
+
+ ## Answer
 ```
 k create cm --help
 
@@ -9,12 +25,7 @@ k create configmap my-config --from-file=path/to/bar
 ```
 
 
-```
-k exec podname -it -- bash bin/sh
 
-k exec podname -it -- env
-
-```
 
 ```
 apiVersion: v1
@@ -32,3 +43,6 @@ spec:
 ```
               
 
+```
+k exec podname -it -- env
+```
