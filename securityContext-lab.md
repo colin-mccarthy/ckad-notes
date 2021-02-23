@@ -3,3 +3,5 @@ directory at data/app. Files created on the volume should use the file system gr
 
 Shell to the running container and create a file called logs.txt in the directory at data/app.
 List the contents of the directory and verify the fs group.
+
+Adjust the reource limits in the pod so that it will run.
