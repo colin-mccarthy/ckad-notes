@@ -2,6 +2,8 @@ Create a resources qouta named app under the namespace rq-demo. Set the memmory 
 
 Create a new pod that exceedes the resource limit set in the qouta of 1GB.
 
+Adjust the reource limits in the pod so that it will run.
+
 
 
 
