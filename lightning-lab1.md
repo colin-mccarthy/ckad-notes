@@ -44,7 +44,7 @@ spec:
       - mountPath: "/var/www/nginx"
         name: log
   volumes:
-    - name: mypd
+    - name: log
       persistentVolumeClaim:
         claimName: log-claim
 ```
