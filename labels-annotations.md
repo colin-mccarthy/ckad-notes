@@ -21,7 +21,7 @@ k -n sun label pod -l type=worker protected=true # run for label worker
 
 ```
  -n sun get pod --show-labels
- ``
+ ```
  
  Looking good. Finally we set the annotation using the newly assigned label protected: true
  
