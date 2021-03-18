@@ -7,7 +7,7 @@ To then indent the marked lines press > or < and to repeat the action press .
 
 
 ```
-# /opt/course/9/holy-api-deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
